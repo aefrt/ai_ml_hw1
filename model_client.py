@@ -2,6 +2,7 @@ import requests
 import io
 import csv
 import pandas as pd
+import numpy as np
 
 data = {
     'name': 'Maruti Swift Dzire VDI',
@@ -26,9 +27,10 @@ response = requests.post(
 
 print(response.text)
 
-df = pd.read_csv('df_train.csv').head(3)
+df = pd.read_csv('https://raw.githubusercontent.com/Murcha1990/MLDS_ML_2022/main/Hometasks/HT1/cars_train.csv').head(3)
 if 'Unnamed: 0' in df.columns.tolist():
     df.drop(columns='Unnamed: 0', inplace=True)
+df = df.replace(np.nan, float('nan'))
 
 response = requests.post(
     'http://localhost:8000/predict_items', 
