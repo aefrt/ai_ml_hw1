@@ -35,7 +35,7 @@
 
 ![image](./screenshots/2.png)
 
-Теперь передаем запросы с помощью `model_client.py`:
+Теперь отправляем запросы с помощью `model_client.py`:
 
 ![image](./screenshots/3.png)
 
